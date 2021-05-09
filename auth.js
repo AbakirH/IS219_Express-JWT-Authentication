@@ -36,8 +36,8 @@ app.post('/login', (req, res) => {
         const refreshToken = jwt.sign({ username: user.username, role: user.role }, refreshTokenSecret);
 
         refreshTokens.push(refreshToken);
-
         res.json({
+            "User was logged in": username,
             accessToken,
             refreshToken
         });
